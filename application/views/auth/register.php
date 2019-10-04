@@ -17,12 +17,12 @@
                         <form class="user" method="post" action="<?= base_url('auth/register'); ?>">
                             <div class="form-group">
                                 <div class="mb-3 mb-sm-0">
-                                    <input type="text" class="form-control form-control-user" id="nama" name="nama" placeholder="Nama Lengkap" autocomplete="off" value="<?= set_value('nama') ?>">
+                                    <input type="text" class="form-control form-control-user" id="nama" name="nama" placeholder="e.g. John Doe" autocomplete="off" value="<?= set_value('nama') ?>">
                                     <?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Alamat Email" autocomplete="off" value="<?= set_value('email') ?>">
+                                <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="contoh@mail.com" autocomplete="off" value="<?= set_value('email') ?>">
                                 <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="form-group row">
