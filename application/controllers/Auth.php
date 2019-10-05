@@ -12,6 +12,13 @@ class Auth extends CI_Controller
 
     public function index()
     {
+        if ($this->session->userdata('email')) {
+            $role_id = $this->session->userdata('role_id');
+            $queryDashboard = "SELECT role FROM user_role JOIN user ON user_role.id_role = user.role_id WHERE id_role = $role_id";
+            $urlDashboard = $this->db->query($queryDashboard)->row_array();
+            redirect($urlDashboard['role']);
+        }
+
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'required|trim');
         if ($this->form_validation->run() == false) {
@@ -98,5 +105,10 @@ class Auth extends CI_Controller
           </button>
           </div>');
         redirect('auth');
+    }
+
+    public function blocked()
+    {
+        $this->load->view('auth/blocked');
     }
 }

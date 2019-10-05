@@ -12,7 +12,7 @@
                             <h3 class="m-0">Tabel Berita</h3>
                         </div>
                         <div>
-                            <a href="<?= base_url('berita/tambahberita') ?>" class="btn btn-primary">Tambah Berita Baru</a>
+                            <a href="<?= base_url('konten/tambahberita') ?>" class="btn btn-primary">Tambah Berita Baru</a>
                         </div>
                     </div>
                 </div>

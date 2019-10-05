@@ -43,7 +43,7 @@
                 <img src="<?= base_url('assets/img/empty.svg') ?>" class="card-img-top p-3" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
-
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     <a href="#">Baca selengkapnya &rarr;</a>
                 </div>
@@ -104,7 +104,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"><?= date('d F Y', $a['tanggal']) ?></h5>
-                            <p class="card-text text-truncate"><?= $a['nama'] ?></p>
+                            <p class="card-text text-truncate"><?= $a['nama']; ?></p>
                             <a href="<?= base_url('agenda/detail/' . $a['id']) ?>">Baca selengkapnya &rarr;</a>
                         </div>
                     </div>

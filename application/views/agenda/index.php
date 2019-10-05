@@ -13,7 +13,7 @@
                             <h3 class="m-0">Tabel Agenda</h3>
                         </div>
                         <div>
-                            <a href="<?= base_url('agenda/tambah') ?>" class="btn btn-primary">Tambah Agenda Baru</a>
+                            <a href="<?= base_url('admin/tambahagenda') ?>" class="btn btn-primary">Tambah Agenda Baru</a>
                         </div>
                     </div>
                 </div>
@@ -47,10 +47,10 @@
                                         <td><?= $a['penulis']; ?></td>
                                         <td><?= $a['aktif']; ?></td>
                                         <td>
-                                            <a href="<?= base_url('agenda/ubah'); ?>/<?= $a['id']; ?>" class="badge badge-success">
+                                            <a href="<?= base_url('admin/ubahagenda'); ?>/<?= $a['id']; ?>" class="badge badge-success">
                                                 ubah
                                             </a>
-                                            <a href="<?= base_url('agenda/hapus'); ?>/<?= $a['id']; ?>" class="badge badge-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?');">
+                                            <a href="<?= base_url('admin/hapusagenda'); ?>/<?= $a['id']; ?>" class="badge badge-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?');">
                                                 hapus
                                             </a>
                                         </td>

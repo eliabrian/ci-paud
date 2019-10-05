@@ -61,9 +61,9 @@
 <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js'></script>
 
 <script>
-    new FroalaEditor('#myEditor', {
-        toolbarInline: false
-    })
+    let editor = new FroalaEditor('#myEditor', {}, function() {
+
+    });
 </script>
 
 </body>

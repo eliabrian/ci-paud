@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Agenda_model extends CI_Model
+class Admin_model extends CI_Model
 {
 
     public function getAllAgenda()
