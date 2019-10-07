@@ -1,73 +1,36 @@
-<!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="jumbotron p-4 p-md-5 rounded">
+    <div class="container">
+        <h1 class="display-4">Agenda</h1>
+    </div>
+</div>
 
-    <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800"><?= $judul; ?></h1>
-
+<main>
     <div class="row">
-        <div class="col-lg-12">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <div class="d-flex align-items-center">
-                        <div class="mr-auto">
-                            <h3 class="m-0">Tabel Agenda</h3>
-                        </div>
-                        <div>
-                            <a href="<?= base_url('admin/tambahagenda') ?>" class="btn btn-primary">Tambah Agenda Baru</a>
+        <div class="col-md-8">
+            <h3 class="pb-4 mb-4 border-bottom">Agenda Himpaudi</h3>
+
+            <?php foreach (array_slice($agenda, 0, 10) as $a) : ?>
+                <a href="<?= base_url('agenda/detail/' . $a['id']) ?>" class="text-decoration-none text-dark">
+                    <div class="card bg-light shadow-sm mb-3" style="max-width: 100%;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="<?= base_url('assets/img/' . $a['gambar']);  ?>" class="card-img p-3" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h4 class="card-title"><strong><?= date('d F Y', $a['tanggal']); ?></strong></h4>
+                                    <hr>
+                                    <p class="card-text"><?= $a['nama']; ?></p>
+                                    <p class="card-text m-0"><small class="text-muted">Oleh <?= $a['penulis']; ?><br><?= date('d F Y', $a['tanggal_masuk']); ?></small> </p>
+
+
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card-body">
-                    <?= $this->session->flashdata('message'); ?>
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Nama</th>
-                                    <th>Gambar</th>
-                                    <th>Deskripsi</th>
-                                    <th>Tanggal</th>
-                                    <th>Masuk</th>
-                                    <th>Penulis</th>
-                                    <th>Aktif</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $i = 1; ?>
-                                <?php foreach ($agenda as $a) : ?>
-                                    <tr>
-                                        <td><?= $i; ?></td>
-                                        <td><?= $a['nama']; ?></td>
-                                        <td><?= $a['gambar']; ?></td>
-                                        <td><?= $a['deskripsi']; ?></td>
-                                        <td><?= date('d F y', $a['tanggal']); ?></td>
-                                        <td><?= date('d F y', $a['tanggal_masuk']); ?></td>
-                                        <td><?= $a['penulis']; ?></td>
-                                        <td><?= $a['aktif']; ?></td>
-                                        <td>
-                                            <a href="<?= base_url('admin/ubahagenda'); ?>/<?= $a['id']; ?>" class="badge badge-success">
-                                                ubah
-                                            </a>
-                                            <a href="<?= base_url('admin/hapusagenda'); ?>/<?= $a['id']; ?>" class="badge badge-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?');">
-                                                hapus
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <?php $i++; ?>
-                                <?php endforeach; ?>
-                            </tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+                </a>
+            <?php endforeach; ?>
+
         </div>
     </div>
-
-</div>
-<!-- /.container-fluid -->
-
-</div>
-<!-- End of Main Content -->
+</main>

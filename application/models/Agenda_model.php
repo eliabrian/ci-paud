@@ -1,11 +1,17 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Admin_model extends CI_Model
+class Agenda_model extends CI_Model
 {
 
     public function getAllAgenda()
     {
+        return $this->db->get_where('agenda', ['aktif' => 1])->result_array();
+    }
+
+    public function getAllAgendaDesc()
+    {
+        $this->db->order_by('tanggal', 'DESC');
         return $this->db->get_where('agenda', ['aktif' => 1])->result_array();
     }
 
@@ -43,7 +49,6 @@ class Admin_model extends CI_Model
             'gambar' => "empty.png",
             'deskripsi' => htmlspecialchars($this->input->post('editor_content', true)),
             'tanggal' => strtotime($this->input->post('tanggal', true)),
-            'tanggal_masuk' => time(),
             'penulis' => 'Kabupaten Himpaudi Bekasi',
             'aktif' => 1
         ];

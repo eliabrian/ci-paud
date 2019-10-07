@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="<?= base_url('agenda/tambah'); ?>" method="post">
+                    <form action="<?= base_url('admin/tambahagenda'); ?>" method="post">
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" class="form-control" id="nama" name="nama" autocomplete="off">

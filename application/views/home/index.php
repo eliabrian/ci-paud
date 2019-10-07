@@ -95,7 +95,7 @@
                 <h3 class="m-0">Agenda Himpaudi</h3>
             </div>
             <div class="p-2">
-                <a href="#">Lihat Agenda Lainnya &rarr;</a>
+                <a href="<?= base_url('agenda') ?>">Lihat Agenda Lainnya &rarr;</a>
             </div>
         </div>
         <div class="row">

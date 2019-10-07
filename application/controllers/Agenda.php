@@ -1,9 +1,8 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends CI_Controller
+class Agenda extends CI_Controller
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -12,10 +11,10 @@ class Home extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = 'Home';
+        $data['judul'] = 'Agenda';
         $data['agenda'] = $this->Agenda_model->getAllAgendaDesc();
         $this->load->view('templates/header', $data);
-        $this->load->view('home/index', $data);
+        $this->load->view('agenda/index', $data);
         $this->load->view('templates/footer');
     }
 }
