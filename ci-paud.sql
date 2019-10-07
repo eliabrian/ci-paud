@@ -3,18 +3,12 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Sep 26, 2019 at 02:02 PM
+-- Generation Time: Oct 07, 2019 at 02:50 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `ci-paud`
@@ -30,7 +24,7 @@ CREATE TABLE `agenda` (
   `id` int(11) NOT NULL,
   `nama` varchar(128) NOT NULL,
   `gambar` varchar(128) NOT NULL,
-  `deskripsi` varchar(256) NOT NULL,
+  `deskripsi` longtext NOT NULL,
   `tanggal` int(11) NOT NULL,
   `tanggal_masuk` int(11) NOT NULL,
   `penulis` varchar(128) NOT NULL,
@@ -42,8 +36,9 @@ CREATE TABLE `agenda` (
 --
 
 INSERT INTO `agenda` (`id`, `nama`, `gambar`, `deskripsi`, `tanggal`, `tanggal_masuk`, `penulis`, `aktif`) VALUES
-(1, 'Musyawarah Wilayah Himpaudi Bekasi', 'empty.png', 'Musyawarah Himpaudi Bekasi yang berlokasi di blabla, pada tanggal 18 September 2019 pukul 10.00 WIB', 1568770487, 1568770487, 'Kabupaten Himpaudi Bekasi', 1),
-(2, 'Seminar Nasional Kesetaraan di Gedung Graha Cakrawala Universitas Negeri Malang', 'empty.png', '&lt;p&gt;&lt;span xss=removed&gt;Kamu tertarik kuliah di program&lt;strong&gt; Sistem Informasi&lt;/strong&gt;? Yuk, ikuti Campus Tour &amp; Alumni Sharing dari Program Sistem Informasi Kalbis Institute! Kamu juga bisa dapat bonus OVO senilai 50.000 loh! C', 1569801600, 1569135844, 'Kabupaten Himpaudi Bekasi', 1);
+(1, 'Musyawarah Wilayah Himpaudi Bekasi', 'agenda.svg', '&lt;p&gt;&lt;strong&gt;Musyawarah&lt;/strong&gt; Himpaudi Bekasi yang berlokasi di &lt;strong&gt;Blabla&lt;/strong&gt;, pada tanggal 18 &lt;img src=&quot;blob:http://localhost:8888/30df2f6e-7379-4085-8975-aa086460a400&quot; xss=removed class=&quot;fr-fic fr-dib&quot;&gt;September 2019 pukul 10.00 WIB&lt;/p&gt;', 1572307200, 1570450469, 'Kabupaten Himpaudi Bekasi', 1),
+(2, 'Seminar Nasional Kesetaraan di Gedung Graha Cakrawala Universitas Negeri Malang', 'agenda.svg', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed. Lectus proin nibh nisl condimentum id venenatis a condimentum. Dignissim suspendisse in est ante in nibh mauris. Ornare massa eget egestas purus viverra accumsan in nisl nisi. Aliquet nibh praesent tristique magna sit amet purus. Pellentesque sit amet porttitor eget dolor morbi non arcu. Ut venenatis tellus in metus vulputate eu scelerisque felis. Commodo quis imperdiet massa tincidunt nunc pulvinar. Nunc id cursus metus aliquam eleifend. Facilisi morbi tempus iaculis urna id. Neque ornare aenean euismod elementum nisi. Iaculis at erat pellentesque adipiscing. &lt;/p&gt;&lt;p&gt;Tempus iaculis urna id volutpat lacus laoreet. Cras adipiscing enim eu turpis egestas. Nec dui nunc mattis enim ut tellus elementum. In vitae turpis massa sed elementum tempus egestas sed. Amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Eu lobortis elementum nibh tellus molestie. Egestas sed sed risus pretium quam vulputate. Posuere ac ut consequat semper viverra nam. Eget dolor morbi non arcu risus quis. Eget dolor morbi non arcu risus quis varius. Risus nec feugiat in fermentum posuere urna. Vitae congue eu consequat ac felis donec. Lorem ipsum dolor sit amet consectetur. Nibh tellus molestie nunc non blandit massa enim nec dui. &lt;/p&gt;&lt;p&gt;Risus commodo viverra maecenas accumsan lacus vel. Id venenatis a condimentum vitae sapien pellentesque habitant. Volutpat commodo sed egestas egestas fringilla. Sem et tortor consequat id. Enim neque volutpat ac tincidunt vitae. Nisi porta lorem mollis aliquam ut porttitor leo a diam. Sit amet nulla facilisi morbi. Cras semper auctor neque vitae tempus. In iaculis nunc sed augue lacus. Pharetra pharetra massa massa ultricies mi. Malesuada fames ac turpis egestas sed. Lorem sed risus ultricies tristique nulla aliquet enim. Mattis molestie a iaculis at erat pellentesque adipiscing commodo. Ornare quam viverra orci sagittis eu volutpat odio facilisis. Quis imperdiet massa tincidunt nunc pulvinar. Porttitor massa id neque aliquam vestibulum morbi blandit cursus. In eu mi bibendum neque egestas congue quisque egestas diam. Feugiat in ante metus dictum at tempor commodo. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu. Libero volutpat sed cras ornare arcu. Quam adipiscing vitae proin sagittis nisl rhoncus mattis.&lt;/p&gt;', 1570233600, 1570204830, 'Kabupaten Himpaudi Bekasi', 1),
+(3, 'Jalan Sehat dan Doa Bersama di Pantai Ria Kenjeran diikuti perwakilan Himpaudi se-Jawa Timur', 'agenda.svg', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed. Lectus proin nibh nisl condimentum id venenatis a condimentum. Dignissim suspendisse in est ante in nibh mauris. Ornare massa eget egestas purus viverra accumsan in nisl nisi. Aliquet nibh praesent tristique magna sit amet purus. Pellentesque sit amet porttitor eget dolor morbi non arcu. Ut venenatis tellus in metus vulputate eu scelerisque felis. Commodo quis imperdiet massa tincidunt nunc pulvinar. Nunc id cursus metus aliquam eleifend. Facilisi morbi tempus iaculis urna id. Neque ornare aenean euismod elementum nisi. Iaculis at erat pellentesque adipiscing. Tempus iaculis urna id volutpat lacus laoreet. Cras adipiscing enim eu turpis egestas. Nec dui nunc mattis enim ut tellus elementum. In vitae turpis massa sed elementum tempus egestas sed. Amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Eu lobortis elementum nibh tellus molestie. Egestas sed sed risus pretium quam vulputate. Posuere ac ut consequat semper viverra nam. Eget dolor morbi non arcu risus quis. Eget dolor morbi non arcu risus quis varius.&lt;/p&gt;', 1574380800, 1570451592, 'Kabupaten Himpaudi Bekasi', 1);
 
 -- --------------------------------------------------------
 
@@ -236,7 +231,7 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT for table `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `berita`
@@ -273,7 +268,3 @@ ALTER TABLE `user_role`
 --
 ALTER TABLE `user_sub_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
