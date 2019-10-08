@@ -21,20 +21,10 @@
             <hr>
         </div>
         <div class="col-md-4">
-            <div class="mb-3 d-flex align-item-center">
-                <span class="badge badge-dark text-uppercase px-3">Agenda Lainnya</span>
-            </div>
-            <?php foreach (array_slice($agenda_lain, 0, 4) as $al) : ?>
-                <a href="" class="text-decoration-none">
-                    <div class="card mw-100 shadow-sm mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title text-dark"><?= date('d F Y', $al['tanggal']); ?></h5>
-                            <h6 class="card-subtitle mb-2 text-muted text-truncate"><?= $al['nama']; ?></h6>
-                        </div>
-                    </div>
-                </a>
-            <?php endforeach; ?>
+            <?php $this->load->view($agenda_aside); ?>
             <hr>
+            <?php $this->load->view($berita_aside); ?>
+
         </div>
     </div>
 </main>

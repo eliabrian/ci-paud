@@ -13,6 +13,9 @@ class Agenda extends CI_Controller
     {
         $data['judul'] = 'Agenda';
         $data['agenda'] = $this->Agenda_model->getAllAgendaDesc();
+
+        $data['berita_aside'] = 'templates/berita/aside';
+
         $this->load->view('templates/header', $data);
         $this->load->view('templates/jumbotron');
         $this->load->view('agenda/index', $data);
@@ -24,6 +27,10 @@ class Agenda extends CI_Controller
         $data['judul'] = 'Agenda';
         $data['agenda'] = $this->Agenda_model->getAgendaById($id);
         $data['agenda_lain'] = $this->Agenda_model->getAllAgendaNotEqual($id);
+
+        $data['berita_aside'] = 'templates/berita/aside';
+        $data['agenda_aside'] = 'templates/agenda/aside';
+
         $this->load->view('templates/header', $data);
         $this->load->view('templates/jumbotron');
         $this->load->view('agenda/detail', $data);

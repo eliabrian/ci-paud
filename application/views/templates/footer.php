@@ -20,7 +20,7 @@
 <div class="col-md-12 p-0">
     <div class="d-flex align-items-center bg-primary" style="font-size:10px; color:white;">
         <div class="mr-auto p-2">
-            <p class="m-0">&copy; 2019 - Laskar Himpaudi Bekasi</p>
+            <p class="m-0">&copy; <?= date('Y') ?> - Elia Brian Baskoro</p>
         </div>
         <div class="p-2">
             <p class="m-0">Memberdayakan dan Memberi Nilai Lebih</p>

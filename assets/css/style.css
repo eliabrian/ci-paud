@@ -1,0 +1,34 @@
+.text-2-line {
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    height: 29px;
+    font-size: 14px;
+    line-height: 1;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text-3-line {
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    height: 43px;
+    font-size: 14px;
+    line-height: 1;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-hover {
+    color: black;
+}
+
+.card-hover:hover {
+    color: #1e93dd;
+    transition: 0.15s;
+}

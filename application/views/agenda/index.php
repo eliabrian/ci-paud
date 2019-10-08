@@ -26,5 +26,8 @@
             <?php endforeach; ?>
 
         </div>
+        <div class="col-md-4">
+            <?php $this->load->view($berita_aside); ?>
+        </div>
     </div>
 </main>
