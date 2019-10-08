@@ -14,7 +14,19 @@ class Agenda extends CI_Controller
         $data['judul'] = 'Agenda';
         $data['agenda'] = $this->Agenda_model->getAllAgendaDesc();
         $this->load->view('templates/header', $data);
+        $this->load->view('templates/jumbotron');
         $this->load->view('agenda/index', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function detail($id)
+    {
+        $data['judul'] = 'Agenda';
+        $data['agenda'] = $this->Agenda_model->getAgendaById($id);
+        $data['agenda_lain'] = $this->Agenda_model->getAllAgendaNotEqual($id);
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/jumbotron');
+        $this->load->view('agenda/detail', $data);
         $this->load->view('templates/footer');
     }
 }

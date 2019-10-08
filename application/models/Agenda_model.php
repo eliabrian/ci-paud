@@ -20,11 +20,19 @@ class Agenda_model extends CI_Model
         return $this->db->get_where('agenda', ['id' => $id])->row_array();
     }
 
+    public function getAllAgendaNotEqual($id)
+    {
+        $this->db->order_by('tanggal', 'DESC');
+        $this->db->where('id !=', $id);
+        $this->db->where('aktif', 1);
+        return $this->db->get('agenda')->result_array();
+    }
+
     public function addAgenda()
     {
         $data = [
             'nama' => htmlspecialchars($this->input->post('nama', true)),
-            'gambar' => "empty.png",
+            'gambar' => "agenda.svg",
             'deskripsi' => htmlspecialchars($this->input->post('editor_content', true)),
             'tanggal' => strtotime($this->input->post('tanggal', true)),
             'tanggal_masuk' => time(),
@@ -46,7 +54,7 @@ class Agenda_model extends CI_Model
     {
         $data = [
             'nama' => htmlspecialchars($this->input->post('nama', true)),
-            'gambar' => "empty.png",
+            'gambar' => "agenda.svg",
             'deskripsi' => htmlspecialchars($this->input->post('editor_content', true)),
             'tanggal' => strtotime($this->input->post('tanggal', true)),
             'penulis' => 'Kabupaten Himpaudi Bekasi',
