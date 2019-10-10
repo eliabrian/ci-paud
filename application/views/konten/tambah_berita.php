@@ -15,11 +15,16 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="<?= base_url('admin/tambahagenda') ?>" method="post">
+                    <form action="<?= base_url('konten/tambahberita') ?>" method="post">
                         <div class="form-group">
                             <label for="nama">Judul</label>
-                            <input type="text" class="form-control" id="nama" name="nama" autocomplete="off">
-                            <small class="form-text text-danger"><?= form_error('nama') ?></small>
+                            <input type="text" class="form-control" id="judul" name="judul" autocomplete="off">
+                            <small class="form-text text-danger"><?= form_error('judul') ?></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama">Headline</label>
+                            <input type="text" class="form-control" id="headline" name="headline" autocomplete="off">
+                            <small class="form-text text-danger"><?= form_error('headline') ?></small>
                         </div>
                         <div class="form-group">
                             <label for="myEditor">Deskripsi</label>

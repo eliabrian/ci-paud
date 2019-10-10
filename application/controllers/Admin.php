@@ -55,7 +55,7 @@ class Admin extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             Agenda berhasil di hapus
           </div>');
-        redirect(base_url('agenda'));
+        redirect(base_url('admin/agenda'));
     }
 
     public function ubahAgenda($id)

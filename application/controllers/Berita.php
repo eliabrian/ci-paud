@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Agenda extends CI_Controller
+class Berita extends CI_Controller
 {
     public function __construct()
     {
@@ -12,31 +12,26 @@ class Agenda extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = 'Agenda';
+        $data['judul'] = 'Berita';
         $data['agenda'] = $this->Agenda_model->getAllAgendaDesc();
         $data['berita'] = $this->Berita_model->getAllBerita();
 
-        $data['berita_aside'] = 'templates/berita/aside';
+        $data['agenda_aside'] = 'templates/agenda/aside';
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/jumbotron');
-        $this->load->view('agenda/index', $data);
+        $this->load->view('berita/index', $data);
         $this->load->view('templates/footer');
     }
 
     public function detail($id)
     {
-        $data['judul'] = 'Agenda';
-        $data['detail_agenda'] = $this->Agenda_model->getAgendaById($id);
-        $data['agenda'] = $this->Agenda_model->getAllAgendaNotEqual($id);
-        $data['berita'] = $this->Berita_model->getAllBerita();
-
-        $data['berita_aside'] = 'templates/berita/aside';
-        $data['agenda_aside'] = 'templates/agenda/aside';
+        $data['judul'] = 'Berita';
+        $data['detail_berita'] = $this->Berita_model->getBeritaById($id);
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/jumbotron');
-        $this->load->view('agenda/detail', $data);
+        $this->load->view('berita/detail', $data);
         $this->load->view('templates/footer');
     }
 }

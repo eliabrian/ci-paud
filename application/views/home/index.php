@@ -35,35 +35,24 @@
                 <h3 class="m-0">Berita Himpaudi</h3>
             </div>
             <div class="p-2">
-                <a href="#">Lihat Berita Lainnya &rarr;</a>
+                <a href="<?= base_url('berita'); ?>">Lihat Berita Lainnya &rarr;</a>
             </div>
         </div>
         <div class="card-deck">
-            <div class="card">
-                <img src="<?= base_url('assets/img/empty.svg') ?>" class="card-img-top p-3" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="#">Baca selengkapnya &rarr;</a>
+            <?php foreach (array_slice($berita, 0, 3) as $b) : ?>
+                <div class="card">
+                    <img src="<?= base_url('assets/img/empty.svg') ?>" class="card-img-top p-3 h-50" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title h5"><?= $b['judul']; ?></h6>
+                        <p class="card-text"><small class="text-muted"><?= date('d F Y', $b['tgl_masuk']); ?></small></p>
+                        <p class="card-text text-3-line"><?= $b['headline']; ?></p>
+
+                    </div>
+                    <div class="card-footer text-muted">
+                        <a href="<?= base_url('berita/detail/' . $b['id']) ?>">Baca selengkapnya &rarr;</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="<?= base_url('assets/img/empty.svg') ?>" class="card-img-top p-3" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#">Baca selengkapnya &rarr;</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="<?= base_url('assets/img/empty.svg') ?>" class="card-img-top p-3" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#">Baca selengkapnya &rarr;</a>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>
@@ -103,9 +92,9 @@
                 <div class="col-sm-3">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"><?= date('d F Y', $a['tanggal']) ?></h5>
-                            <p class="card-text text-truncate"><?= $a['nama']; ?></p>
-                            <a href="<?= base_url('agenda/detail/' . $a['id']) ?>">Baca selengkapnya &rarr;</a>
+                            <h5 class="card-title"><i class="fas fa-fw fa-calendar-day"></i> <?= date('d F Y', $a['tanggal']) ?></h5>
+                            <p class="card-text text-2-line text-font-line" title="<?= $a['nama']; ?>"><?= $a['nama']; ?></p>
+                            <a href="<?= base_url('agenda/detail/' . $a['id']) ?>" title="<?= $a['nama']; ?>">Baca selengkapnya &rarr;</a>
                         </div>
                     </div>
                 </div>

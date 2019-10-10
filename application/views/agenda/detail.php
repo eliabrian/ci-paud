@@ -2,21 +2,21 @@
     <div class="row">
         <div class="col-md-8">
 
-            <h3 class=""><?= $agenda['nama']; ?></h3>
-            <small class="text-muted">Oleh <strong><?= $agenda['penulis']; ?></strong> - <?= date('d F Y', $agenda['tanggal_masuk']); ?></small>
+            <h3 class=""><?= $detail_agenda['nama']; ?></h3>
+            <small class="text-muted">Oleh <strong><?= $detail_agenda['penulis']; ?></strong> - <?= date('d F Y', $detail_agenda['tanggal_masuk']); ?></small>
             <hr>
 
             <div class="d-flex mb-5">
-                <img src="<?= base_url('assets/img/' . $agenda['gambar']); ?>" class="mx-auto mw-100" style="max-height:427px;">
+                <img src="<?= base_url('assets/img/' . $detail_agenda['gambar']); ?>" class="mx-auto mw-100" style="max-height:427px;">
             </div>
             <div class="mb-4">
                 <h5 class=" pb-2">Keterangan</h5>
-                <p><strong>Tanggal :</strong> <?= date('d F Y', $agenda['tanggal']); ?></p>
+                <p><i class="fas fa-fw fa-calendar-day"></i> <strong>Tanggal :</strong> <?= date('d F Y', $detail_agenda['tanggal']); ?></p>
             </div>
             <hr>
             <h5 class="pb-2">Deksripsi</h5>
             <div class="text-justify">
-                <?= html_entity_decode($agenda['deskripsi']); ?>
+                <?= html_entity_decode($detail_agenda['deskripsi']); ?>
             </div>
             <hr>
         </div>
